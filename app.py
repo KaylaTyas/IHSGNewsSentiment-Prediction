@@ -15,7 +15,7 @@ st.set_page_config(
 
 engine = create_engine(os.getenv("DB_URL"))
 TODAY = pd.to_datetime(date.today())
-
+ 
 # Custom CSS
 st.markdown("""
 <style>
@@ -244,7 +244,7 @@ with tab1:
     Website ini memprediksi pergerakan **Indeks Harga Saham Gabungan (IHSG)** dengan menggabungkan:
     - **Analisis Sentimen Berita** - Menganalisis berita ekonomi dan pasar saham
     - **Data Historis IHSG** - Pola pergerakan harga saham
-    - **Machine Learning** - Model SARIMAX untuk prediksi akurat
+    - **Machine Learning** - Model ARIMAX untuk prediksi
         
     ### Fitur Utama
         
@@ -259,17 +259,17 @@ with tab1:
     st.markdown("""
     ## Metodologi
     
-    ### Model SARIMAX
+    ### Model ARIMAX
     
-    **SARIMAX (Seasonal AutoRegressive Integrated Moving Average with eXogenous factors)** 
-    adalah model time series yang powerful untuk prediksi data berurutan.
+    **ARIMAX (AutoRegressive Integrated Moving Average with eXogenous factors)** 
+    adalah model time series untuk prediksi data berurutan yang dikombinasikan dengan faktor eksternal.
     
     #### Proses Training
     
     1. **Data Collection** - Scraping berita dari sumber terpercaya
     2. **Sentiment Analysis** - Klasifikasi sentimen (Positif/Netral/Negatif)
     3. **Feature Engineering** - Membuat fitur dari harga & sentimen
-    4. **Model Training** - Training SARIMAX dengan data historis
+    4. **Model Training** - Training ARIMAX dengan data historis
     5. **Evaluation** - Validasi dengan metrik MAPE, RMSE, MAE
     
     ### Sentimen Berita
@@ -380,7 +380,7 @@ with tab2:
     st.markdown("""
     <div class='info-box'>
         <p style='margin: 0; font-size: 0.9rem; color: #555;'>
-            💡Prediksi dilakukan menggunakan model <strong>SARIMAX</strong>.
+            💡Prediksi dilakukan menggunakan model <strong>ARIMAX</strong>.
         </p>
     </div>""", unsafe_allow_html=True)
     
